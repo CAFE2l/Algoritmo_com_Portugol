@@ -52,7 +52,7 @@ const estilos = {
 };
 
 // Dados
-const frase: string = "ANTECESSOR E SUCESSOR";
+const frase: string = "DOBRO E TERÇA PARTE";
 const largura: number = 35;
 
 // Função para simular o .center() do Python
@@ -65,7 +65,7 @@ const fraseCentralizada: string = " ".repeat(padding) + frase + " ".repeat(paddi
 // Linha 1: Título colorido com repetidores
 console.log(
     `${estilos.negrito}${cores.azul}${"=".repeat(15)}` +
-    `${cores.amarelo}NUMEROS` +
+    `${cores.amarelo}NUMERO` +
     `${cores.verde}${"=".repeat(12)}${cores.limpa}`
 );
 
@@ -83,10 +83,9 @@ console.log(
     `${cores.limpa}`
 );
 
+let num: number = readline.questionInt(`${cores.cinza}${estilos.negrito}Digite um número: `);
+let dobro: number = num ** 2;
+let terca: number = num /3;
 
-let num = readline.questionInt(`${cores.cinza}${estilos.negrito}Digite um número inteiro: `);
-let antecessor, sucessor: number;
-antecessor = num - 1;
-sucessor = num + 1;
-console.log(`O antecessor de ${cores.amarelo}${num} ${cores.cinza}é ${cores.vermelho}${antecessor}`);
-console.log(`${cores.cinza}O sucessor de ${cores.amarelo}${num} ${cores.cinza}é ${cores.verde}${sucessor}${cores.limpa}`);
+console.log(`O dobro de ${cores.amarelo}${num} ${cores.cinza}é ${cores.verde}${dobro}${cores.cinza}`);
+console.log(`A terça parte de ${cores.amarelo}${num} ${cores.cinza}é ${cores.azul}${terca}${cores.limpa}`);
