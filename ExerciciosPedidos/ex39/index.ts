@@ -86,14 +86,16 @@ console.log(
 let par = 0;
 let impar = 0;
 
-for (let i = 0;  i<=6; i++){
-    const pergunta = (`${cores.cinza}${estilos.negrito}Digite um número: `);
-    if (i %2 ==0){
-       par += 1;
-    } else{
-       impar +=1;
-
+for (let i = 0; i <= 6; i++) {
+    const pergunta = `${cores.cinza}${estilos.negrito}Digite um número: `;
+    const numero = readline.questionInt(pergunta);  // ✅ CORREÇÃO: Lê input!
+    
+    if (numero % 2 == 0) {
+        par += 1;
+    } else {
+        impar += 1;
     }
+}
 
-console.log(`Os números ${cores.verde}pares${cores.cinza} informados foram: ${cores.verde}${par}`);
-console.log(`${cores.cinza}Os números ${cores.vermelho}impares ${cores.cinza}informados foram: ${cores.vermelho}${impar}${cores.cinza}`);
+console.log(`${cores.cinza}Os números ${cores.verde}pares${cores.cinza} informados foram: ${cores.verde}${par}`);
+console.log(`${cores.cinza}Os números ${cores.vermelho}impares${cores.cinza} foram: ${cores.vermelho}${impar}${cores.cinza}`);
