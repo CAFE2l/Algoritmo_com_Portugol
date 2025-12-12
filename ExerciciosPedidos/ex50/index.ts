@@ -83,4 +83,42 @@ console.log(
     `${cores.limpa}`
 );
 
+let idades: number[] = [];
+let idadesHomens: number[] = [];
+let idadesMulheres: number[] = [];
 
+while(true){
+    let idade = readline.questionInt(`${cores.cinza}${estilos.negrito}Idade: `);
+    let sexo = readline.question(`Sexo${cores.vermelho}[M/F]:${cores.cinza} `).toUpperCase();
+    
+    idades.push(idade);
+    
+    if (sexo === "M") {
+        idadesHomens.push(idade);
+    } else if (sexo === "F") {
+        idadesMulheres.push(idade);
+    }
+    
+    let continuar = readline.question(`Continuar?${cores.verde}[S/N]:${cores.cinza} `).toUpperCase();
+    if (continuar === "N") break;
+}
+
+// Resultados
+console.log(`\n${cores.amarelo}=== RESULTADOS ===${cores.cinza}`);
+
+// 1. Média dos homens
+if (idadesHomens.length > 0) {
+    let mediaHomens = idadesHomens.reduce((s, v) => s + v, 0) / idadesHomens.length;
+    console.log(`Média idade homens: ${cores.azul}${mediaHomens.toFixed(1)}${cores.cinza}`);
+}
+
+// 2. Maior idade geral
+console.log(`Maior idade: ${cores.verde}${Math.max(...idades)}${cores.cinza}`);
+
+// 3. Quantidade de homens
+console.log(`Homens cadastrados: ${cores.ciano}${idadesHomens.length}${cores.cinza}`);
+
+// 4. Mulher mais jovem
+if (idadesMulheres.length > 0) {
+    console.log(`Mulher mais jovem: ${cores.roxo}${Math.min(...idadesMulheres)}${cores.cinza}`);
+}
