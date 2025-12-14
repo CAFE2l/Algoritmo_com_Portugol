@@ -82,3 +82,45 @@ console.log(
     `${"=".repeat(33)}` +
     `${cores.limpa}`
 );
+let idades: number[] = [];
+let homens30: number[] = [];
+let mulher18: number[] = [];
+let pessoaMaisVelha: { nome: string, idade: number } = { nome: "", idade: 0 };
+let mulherJovem: {nome: string, idade: number} = {nome: "", idade: 0};
+
+while (true){
+    let nome = readline.question(`${cores.cinza}${estilos.negrito}Qual é seu nome? `);
+    let idade = readline.questionInt(`Qual é a sua idade? `);
+    let sexo = readline.question(`Qual é seu sexo?${cores.roxo}[M/F]:${cores.cinza} `).toUpperCase();
+
+    if (idade > pessoaMaisVelha.idade) {
+        // Atualiza a maior idade encontrada até agora
+        pessoaMaisVelha = { nome, idade };
+    }
+    
+    if (sexo == "F" && idade < mulherJovem.idade ||sexo == "F" && mulherJovem.idade == 0) {
+        // Atualiza a mulher mais jovem encontrada até agora
+        mulherJovem = { nome, idade };
+    }
+    
+
+    idades.push(idade);
+    if(sexo == "M" && idade == 30){
+        homens30.push(idade);
+    } else if(sexo == "F" && idade < 18){
+        mulher18.push(idade);
+    }
+    let pergunta = readline.question(`Quer continuar?${cores.vermelho}[S/N]:${cores.cinza} `).toUpperCase();
+    if (pergunta == "N"){
+        break;
+    }
+}
+
+let soma = idades.reduce((total, valor) => total + valor,0);
+let media = soma / idades.length;
+
+console.log(`O nome da pessoa mais velha é: ${cores.azul}${pessoaMaisVelha.nome}${cores.cinza}`);
+console.log(`O nome da mulher mais jovem é: ${cores.roxo}${mulherJovem.nome}${cores.cinza}`);
+console.log(`A média de idade do grupo é de: ${cores.amarelo}${media}${cores.cinza}`);
+console.log(`As mulheres com menos de ${cores.vermelho}18${cores.cinza} anos foram: ${cores.vermelho}${mulher18.length}${cores.cinza}`);
+console.log(`Os homens que tem mais de ${cores.verde}30${cores.cinza} anos foram: ${cores.verde}${homens30.length}${cores.cinza}`);
