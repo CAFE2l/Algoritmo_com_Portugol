@@ -84,11 +84,11 @@ console.log(
 );
 
 
-for(let c = 100; c>=0; c-=10){
-    console.log(c);
+let vetor:number[] = [];
+
+for(let i=1; i<=5; i++){
+    vetor.push(5);
+    vetor.push(3);
 }
-let c = 100;
-while(c>=0){
-    console.log(c);
-    c-=10;
-}
+
+console.log(vetor);
