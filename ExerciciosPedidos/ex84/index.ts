@@ -83,15 +83,21 @@ console.log(
     `${cores.limpa}`
 );
 
-function Contador(){
-    let inicio = readline.questionInt(`${cores.cinza}${estilos.negrito}Digite um valor para o início da contagem: `);
-    let fim =  readline.questionInt(`Digite um valor para o fim da contagem: `);
-    let incremento = readline.questionInt(`Digite um valor para o incremento: `);
-
-    for(let i=inicio; i<=fim; i+=incremento){
-        console.log(i);
+function Fibonacci(){
+    let valor = readline.questionInt(`${cores.cinza}${estilos.negrito}Digite um valor para mostrar a sequência de fibonacci: `);
+    let t1 = 0;
+    let t2 = 1;
+    let t3;
+    for (let i=0; i<valor; i++){
+        
+        t3 = t1 + t2;
+        t1 = t2;
+        t2 = t3;
+        console.log(`${cores.azul}${estilos.italico}${t3}${cores.cinza}`);
     }
-}
+ }
+  
+ 
 
-Contador();
-console.log("FIM");
+ Fibonacci();
+ console.log(`${cores.vermelho}FIM${cores.cinza}`);
