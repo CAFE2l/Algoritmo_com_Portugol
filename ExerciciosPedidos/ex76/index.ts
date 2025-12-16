@@ -83,18 +83,24 @@ console.log(
     `${cores.limpa}`
 );
 
-
-let idades = [];
 let nomes = [];
-for(let i=0; i<9; i++){
+let sexos = [];
+let salarios = [];
+
+for (let i=0; i<5; i++){
     let nome = readline.question(`${cores.cinza}${estilos.negrito}Digite seu nome: `);
-    let idade = readline.questionInt(`Digite sua idade? `);
-    if(idade < 18){
+    let sexo = readline.question(`Digite seu sexo [M/F]: `).toUpperCase();
+    let salario = readline.questionFloat(`Digite seu salario: `);
+    if(sexo == "F" && salario > 5000){   
         nomes.push(nome);
-        idades.push(idade);
+        sexos.push(sexo);
+        salarios.push(salario);
     }
+ 
+
+
 }
 
-console.log(`${estilos.italico}${cores.vermelho}Mostando os dados apenas das pessoas menores de idade: `)
-console.log(`${cores.azul}${nomes}`);
-console.log(`${cores.verde}${idades}${cores.cinza}`);
+console.log(`${estilos.italico}${cores.vermelho}Mostrando apenas os dados das mulheres que ganham mais de 5000 ${cores.cinza}`);
+console.log(`${cores.roxo}${nomes}`);
+console.log(`${cores.verde}${salarios}${cores.cinza}`);
