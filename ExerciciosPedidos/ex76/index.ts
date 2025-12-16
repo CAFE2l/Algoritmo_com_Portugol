@@ -104,3 +104,4 @@ for (let i=0; i<5; i++){
 console.log(`${estilos.italico}${cores.vermelho}Mostrando apenas os dados das mulheres que ganham mais de 5000 ${cores.cinza}`);
 console.log(`${cores.roxo}${nomes}`);
 console.log(`${cores.verde}${salarios}${cores.cinza}`);
+//test
