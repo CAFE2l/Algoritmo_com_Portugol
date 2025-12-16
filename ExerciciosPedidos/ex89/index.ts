@@ -77,21 +77,15 @@ console.log(
 );
 
 
-
 console.log(
     `${estilos.negrito}${cores.vermelho}` +
     `${"=".repeat(33)}` +
     `${cores.limpa}`
 );
-let soma = 0;
 
-function SuperSomador(a,b){
-    for(let i=a; i<=b; i++){
-        console.log(i)
-        soma += i;
 
-    }
-    console.log(`${soma}`);
+function Potencia(a,b){
+    return console.log(a ** b);
 }
 
-SuperSomador(1, 6);
+Potencia(5,2);
