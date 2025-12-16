@@ -73,7 +73,8 @@ console.log(
 console.log(
     `${cores.cinza}${fundo.branco}${estilos.negrito}` +
     `${fraseCentralizada}` +
-    `${cores.limpa}` // O Limpa aqui é essencial pra não bugar o resto do terminal
+    `${cores.limpa}` // O Limpa aqui é essenci
+    // al pra não bugar o resto do terminal
 );
 
 
